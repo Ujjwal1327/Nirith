@@ -1,0 +1,405 @@
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('assets/font/primary.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+:root {
+  /* font-size  */
+  /*
+    Syntax: clamp(minimum_value, preferred_value, maximum_value)
+    - minimum_value: The smallest size the font will be.
+    - preferred_value: A value relative to the viewport width (e.g., 5vw for 5% of viewport width).
+    - maximum_value: The largest size the font will be.
+  */
+  --font-heading1: clamp(2.5rem, 4.5vw, 5.5rem);
+  --font-heading2: clamp(2.5rem, 4.5vw, 5rem);
+  --font-heading3: clamp(1.8rem, 3vw, 3.5rem);
+  --font-para1: clamp(1.8rem, 2.5vw, 2.2rem);
+  --font-para2: clamp(1.4rem, 2vw, 1.8rem);
+  --font-para3: clamp(1.3rem, 1.5vw, 1.4rem);
+  --font-para4: clamp(1rem, 1.2vw, 1.1rem);
+  /* font-color  */
+  --white-color: #ffffff;
+  --black-color: #000002;
+  --gray-color: #535c6c;
+  --dark-blue-color: #101828;
+
+  /* bg-color  */
+  --light-blue-color: #f4f6ff;
+  --blue-color: #4f39f6;
+  --blue-color2: #402fbe;
+
+  /* box shadow  */
+  --box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'MyCustomFont', sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Inherit Basic Styles */
+html {
+  font-size: 62.5%;
+  line-height: 1.2;
+  text-size-adjust: 100%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Reset list styles */
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Remove default link styling */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Set up default form input styling */
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 0.5em;
+  margin: 0.25em 0;
+  line-height: 1.5;
+}
+
+/* Add basic styling for images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* Reset default block and inline elements' spacing */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* Fix for inline-block issues */
+*::before,
+*::after {
+  box-sizing: border-box;
+
+}
+
+/* Box Model Fix (Universal Box-Sizing) */
+
+
+/* ************************************************************* */
+/* navbar css  */
+/* ************************************************************* */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* padding: 1rem 2rem; */
+  z-index: 999;
+  /* height: 70px; */
+  transition: all 0.5s ease;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.navbar.scrolled {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .nav-container {
+  width: 90%;
+  margin: auto;
+  padding: 1rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.navbar .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--dark-blue-color);
+}
+
+.navbar .menu li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  position: relative;
+}
+.navbar .menu li:hover{
+  color: var(--blue-color);
+}
+.navbar .menu li>i {
+  margin-left: 0.4rem;
+}
+
+.navbar .menu li:hover>i {
+  transform: rotate(180deg);
+  font-weight: bold;
+}
+
+.navbar .menu li .dropdown1,
+.navbar .menu li .dropdown2 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) scaleY(0);
+  /* closed */
+  transform-origin: top center;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  /* curtain feel */
+  will-change: transform, opacity;
+  transition:  opacity .3s ease;
+}
+
+
+.navbar .menu li:hover .dropdown1 {
+  transform: translateX(-50%) scaleY(1);
+  /* show hote time bhi center hi rahe */
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar .menu li:hover .dropdown1 .title {
+  margin-bottom: 1.5rem;
+}
+
+.navbar .menu li:hover .dropdown1 .types {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* ensures equal width columns */
+  row-gap: 1rem;
+  column-gap: 4rem;
+  align-items: start;
+  /* align items at top */
+  justify-items: start;
+  /* align text/icons on the left */
+}
+
+.navbar .menu li:hover .dropdown1 .types .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  /* border: 1px solid red; */
+  text-wrap: nowrap;
+}
+
+.navbar .menu li:hover .dropdown1 .types .item .icon {
+  background-color: var(--light-blue-color);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  min-height: 4rem;
+  min-width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.05rem solid var(--light-blue-color);
+}
+
+.navbar .menu li:hover .dropdown1 .types .item:hover .icon {
+  border: 0.05rem solid rgb(228, 228, 228);
+  background-color: white;
+}
+
+.navbar .menu li:hover .dropdown1 .types .item:hover .icon>i {
+  color: var(--dark-blue-color);
+}
+
+.navbar .menu li:hover .dropdown1 .types .item .icon i {
+  font-size: 2rem;
+  color: #939fdf;
+}
+
+
+.navbar .menu li:hover .dropdown1 .types .item .content p {
+  color: var(--dark-blue-color);
+}
+
+.navbar .menu li:hover .dropdown1 .types .item .content p i {
+  opacity: 0;
+}
+
+.navbar .menu li:hover .dropdown1 .types .item:hover .content p i {
+  transform: translate(1rem);
+  opacity: 1;
+  display: inline-block;
+}
+
+.navbar .menu li:hover .dropdown1 .types .item .content span {
+  color: var(--gray-color);
+}
+
+.navbar .menu li .dropdown1 .seperating-types {
+  background-color: #939fdf;
+  height: .2rem;
+  margin: 1rem 0rem;
+  border: none;
+}
+
+/* dropdown 2 */
+
+
+
+
+.navbar .menu li:hover .dropdown2 {
+  transform: translateX(-50%) scaleY(1);
+  /* show hote time bhi center hi rahe */
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar .menu li:hover .dropdown2 .types {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* ensures equal width columns */
+  row-gap: 1rem;
+  column-gap: 4rem;
+  align-items: start;
+  /* align items at top */
+  justify-items: start;
+  /* align text/icons on the left */
+}
+
+.navbar .menu li:hover .dropdown2 .types .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  /* border: 1px solid red; */
+  text-wrap: nowrap;
+}
+
+.navbar .menu li:hover .dropdown2 .types .item .icon {
+  background-color: var(--light-blue-color);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  min-height: 4rem;
+  min-width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.05rem solid var(--light-blue-color);
+}
+
+.navbar .menu li:hover .dropdown2 .types .item:hover .icon {
+  border: 0.05rem solid rgb(228, 228, 228);
+  background-color: white;
+}
+
+.navbar .menu li:hover .dropdown2 .types .item:hover .icon>i {
+  color: var(--dark-blue-color);
+}
+
+.navbar .menu li:hover .dropdown2 .types .item .icon i {
+  font-size: 2rem;
+  color: #939fdf;
+}
+
+
+.navbar .menu li:hover .dropdown2 .types .item .content p {
+  color: var(--dark-blue-color);
+}
+.navbar .menu li:hover .dropdown2 .types .item .content p span{
+  background-color: rgb(64, 255, 0);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  color: white;
+  font-size: var(--font-para4);
+}
+
+.navbar .menu li:hover .dropdown2 .types .item .content p i {
+  opacity: 0;
+}
+
+.navbar .menu li:hover .dropdown2 .types .item:hover .content p i {
+  transform: translate(1rem);
+  opacity: 1;
+  display: inline-block;
+}
+
+
+
+.navbar .menu li .dropdown2 .seperating-types {
+  background-color: #939fdf;
+  height: .2rem;
+  margin: 1rem 0rem;
+  border: none;
+}
+
+
+
+.navbar .buttons a {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  font-size: 1.6rem;
+  border-radius: 0.7rem;
+  font-weight: 400;
+  padding: 1.2rem 2rem;
+}
+
+.navbar .buttons a:hover {
+  background-color: var(--blue-color2);
+}
