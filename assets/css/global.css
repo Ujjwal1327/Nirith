@@ -1,10 +1,19 @@
 @font-face {
-  font-family: 'MyCustomFont';
-  src: url('assets/font/primary.woff2') format('woff2');
-  font-weight: normal;
+  font-family: "Orbitron";
+  src: url("/assets/font/Orbitron-VariableFont_wght.ttf") format("woff2"),
+    url("/assets/font/Orbitron-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  /* for variable weights */
   font-style: normal;
 }
 
+/* Primary font */
+@font-face {
+  font-family: "Primary";
+  src: url("/assets/font/primary.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   /* font-size  */
@@ -14,7 +23,7 @@
     - preferred_value: A value relative to the viewport width (e.g., 5vw for 5% of viewport width).
     - maximum_value: The largest size the font will be.
   */
-  --font-heading1: clamp(2.5rem, 4.5vw, 5.5rem);
+  --font-heading1: clamp(3.7rem, 4.7vw, 5.5rem);
   --font-heading2: clamp(2.5rem, 4.5vw, 5rem);
   --font-heading3: clamp(1.8rem, 3vw, 3.5rem);
   --font-para1: clamp(1.8rem, 2.5vw, 2.2rem);
@@ -35,6 +44,9 @@
   /* box shadow  */
   --box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
+  /* font-family  */
+  --primary: "Primary", sans-serif;
+  --orbitron: "Orbitron", sans-serif;
 }
 
 *,
@@ -47,10 +59,11 @@
 }
 
 body {
-  font-family: 'MyCustomFont', sans-serif;
+  font-family: var(--primary);
   width: 100%;
   overflow-x: hidden;
 }
+
 
 /* Inherit Basic Styles */
 html {
@@ -138,7 +151,6 @@ summary {
   /* height: 70px; */
   transition: all 0.5s ease;
   background-color: transparent;
-  cursor: pointer;
 }
 
 .navbar.scrolled {
@@ -182,9 +194,11 @@ summary {
   height: 40px;
   position: relative;
 }
-.navbar .menu li:hover{
+
+.navbar .menu li:hover {
   color: var(--blue-color);
 }
+
 .navbar .menu li>i {
   margin-left: 0.4rem;
 }
@@ -211,7 +225,7 @@ summary {
   overflow: hidden;
   /* curtain feel */
   will-change: transform, opacity;
-  transition:  opacity .3s ease;
+  transition: opacity .3s ease;
 }
 
 
@@ -362,7 +376,8 @@ summary {
 .navbar .menu li:hover .dropdown2 .types .item .content p {
   color: var(--dark-blue-color);
 }
-.navbar .menu li:hover .dropdown2 .types .item .content p span{
+
+.navbar .menu li:hover .dropdown2 .types .item .content p span {
   background-color: rgb(64, 255, 0);
   padding: 0.5rem 1rem;
   border-radius: 1rem;
@@ -402,4 +417,21 @@ summary {
 
 .navbar .buttons a:hover {
   background-color: var(--blue-color2);
+}
+
+/* custom classes  */
+
+.parent-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 90%;
+  gap: 3rem;
+}
+
+.p1 {
+  color: var(--gray-color);
+  font-size: var(--font-para2);
+  line-height: 1.3;
 }
