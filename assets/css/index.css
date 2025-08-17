@@ -16,7 +16,7 @@
     position: absolute;
     width: 10%;
     height: 15%;
-    top: 30%;
+    top: 10%;
     left: 20%;
     background-color: rgb(147, 157, 224);
     filter: blur(80px);
@@ -28,9 +28,9 @@
     position: absolute;
     width: 30%;
     height: 30%;
-    top: 60%;
+    top: 20%;
     left: 40%;
-    background-color: rgb(137, 151, 240);
+    background-color: rgb(248, 33, 14);
     filter: blur(100px);
     z-index: -1;
 }
@@ -55,21 +55,125 @@
     margin-bottom: 5rem;
 }
 
-.hero-section .left button {
-    background-color: var(--blue-color);
-    color: var(--white-color);
-    font-size: 1.6rem;
-    cursor: pointer;
-    border-radius: 0.7rem;
-    font-weight: 400;
-    padding: 1.2rem 2rem;
-}
-
-.hero-section .left button:hover {
-    background-color: var(--blue-color2);
-}
 
 
 .hero-section .right {
     width: 50%;
+}
+
+
+/* ************************************************************* */
+/* services section  */
+/* ************************************************************* */
+.services>div {
+    flex-direction: column;
+}
+
+.services>h2 {
+    width: 50%;
+    /* margin-bottom: 5rem; */
+}
+
+.services .container {
+    margin-top: 4rem;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    gap: 3rem;
+}
+
+.services .container .card {
+    padding: 3rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    justify-content: flex-start;
+    border-radius: 2rem;
+    background-color: var(--light-blue-color);
+}
+
+.services .container .card p {
+    font-weight: 400;
+}
+
+.services .container .card .anchor-tags {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    column-gap: 2rem;
+    row-gap: 1rem;
+    text-wrap: nowrap;
+    flex-wrap: wrap;
+}
+
+.services .container .card img {
+    flex: 1;
+}
+
+.services .container .card .anchor-tags li {
+    font-size: var(--font-para3);
+    color: var(--gray-color);
+}
+
+.services .container .card .anchor-tags li:hover {
+    text-decoration: underline;
+}
+
+.services .container2 {
+    width: 100%;
+}
+
+.services .container2 .card {
+    width: 100%;
+    background-color: var(--light-blue-color);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+    text-align: center;
+    border-radius: 2rem;
+}
+
+.services .container2 .card .anchor-tags {
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+    row-gap: 1rem;
+    text-wrap: nowrap;
+    flex-wrap: wrap;
+}
+
+.services .container2 .card .anchor-tags li {
+    font-size: var(--font-para3);
+    color: var(--gray-color);
+}
+
+.services .container2 .card .anchor-tags li:hover {
+    text-decoration: underline;
+}
+
+.services .container2 .card .images {
+    margin: 2rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    row-gap: 3rem;
+
+}
+
+.services .container2 .card .images img {
+    border: 1px solid white;
+    border-radius: 1rem;
+
+}
+
+.services .container2 .card a {
+    margin-left: auto;
 }

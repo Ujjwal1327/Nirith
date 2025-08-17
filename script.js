@@ -20,3 +20,15 @@ window.addEventListener('scroll', () => {
 });
 
 
+// infinite logo scroll
+gsap.to(".all", {
+  xPercent: -100,
+  repeat: -1,
+  duration: 15,
+  ease: "linear",
+  yoyo: true,        // wapas reverse karo smoothl
+  modifiers: {
+    xPercent: gsap.utils.wrap(-100, 0) // keep looping seamlessly
+  }
+});
+
