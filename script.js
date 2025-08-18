@@ -44,3 +44,13 @@ function toggleMenu() {
   navMenu.classList.toggle("active");
   main.classList.toggle("menu-open");
 }
+
+function toggleResponsiveDropdown() {
+  const resSubMenu = document.querySelector(".res-menu .dropdown");
+  resSubMenu.classList.toggle("showDropDown1");
+}
+
+function toggleResponsiveDropdown2() {
+  const resSubMenu = document.querySelector(".res-menu .dropdown2");
+  resSubMenu.classList.toggle("showDropDown2");
+}
