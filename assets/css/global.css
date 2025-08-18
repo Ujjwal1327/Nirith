@@ -139,17 +139,25 @@ summary {
 
 /* ************************************************************* */
 /* navbar css  */
+
 /* ************************************************************* */
+
+
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   /* padding: 1rem 2rem; */
   z-index: 999;
-  /* height: 70px; */
+  height: 70px;
   transition: all 0.5s ease;
   background-color: transparent;
 }
+
+/* by default */
+/* Body ko lock karne ke liye */
+
+
 
 .navbar.scrolled {
   position: fixed;
@@ -160,10 +168,16 @@ summary {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+.navbar .parent-container {
+  padding: 0;
+  background-color: transparent;
+  max-height: 70px;
+}
+
 .navbar .nav-container {
-  width: 90%;
+  width: 100%;
   margin: auto;
-  padding: 1rem 0rem;
+  /* padding: 1rem 0rem; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -408,8 +422,6 @@ summary {
   border: none;
 }
 
-
-
 .navbar .buttons a {
   background-color: var(--blue-color);
   color: var(--white-color);
@@ -497,6 +509,7 @@ summary {
   margin: auto;
   width: 90%;
   /* overflow-x: hidden; */
+  /* border: 1px solid; */
   gap: 3rem;
   margin-bottom: 10rem;
 }
@@ -515,7 +528,6 @@ summary {
   font-family: var(--orbitron);
   line-height: 1.3;
   letter-spacing: .1rem;
-
   color: var(--dark-blue-color);
 }
 
@@ -534,6 +546,7 @@ summary {
 .heading4 {
   color: var(--blue-color);
   font-size: var(--font-para4);
+  letter-spacing: 0.2rem;
   font-family: var(--orbitron);
 }
 
@@ -562,4 +575,84 @@ summary {
 .button:hover {
   background-color: #fff;
   color: black;
+}
+
+/* burger  */
+
+
+
+nav .burger {
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 4rem;
+  display: none;
+  /*  */
+}
+
+nav .burger span {
+  width: 100%;
+  background-color: var(--dark-blue-color);
+  height: 0.4rem;
+}
+
+nav .burger span:nth-child(2) {
+  width: 70%;
+  margin-left: auto;
+  transition: all 0.1s ease;
+}
+
+nav .burger span:nth-child(3) {
+  width: 50%;
+  margin-left: auto;
+  transition: all 0.5s ease;
+}
+
+nav .burger.active span {
+  width: 100%;
+  /* Full width when clicked */
+  margin-left: auto;
+  /* Center align the spans */
+}
+
+@media (max-width:1024px) {
+  .parent-container {
+    /* border: 1px solid red; */
+    width: 94%;
+  }
+
+  nav .button,
+  nav .menu {
+    display: none !important;
+  }
+
+  nav .burger {
+    display: flex;
+  }
+}
+
+
+/* Responsive Menu */
+.res-menu {
+  position: fixed;
+  top: 70px;
+  right: 0;
+  width: 0%;
+  height: 100vh;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  /* full screen occupy karega */
+  background: #fff;
+  overflow-y: auto;
+  /* andar ka content scroll hoga */
+  z-index: 9999;
+  display: block;
+  /* default hidden */
+}
+
+/* Show state */
+.res-menu.show {
+  padding: 1rem;
+  width: 100vw;
+    transform: rotate(0deg);
+
 }

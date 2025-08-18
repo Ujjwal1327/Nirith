@@ -22,7 +22,7 @@ window.addEventListener('scroll', () => {
 
 // infinite logo scroll
 gsap.to(".all", {
-  xPercent: -100,
+  xPercent: -90,
   repeat: -1,
   duration: 15,
   ease: "linear",
@@ -32,3 +32,15 @@ gsap.to(".all", {
   }
 });
 
+function toggleMenu() {
+  const resMenu = document.querySelector(".res-menu");
+  const burger = document.querySelector(".burger");
+  const navMenu = document.querySelector(".navMenu");
+  const main = document.querySelector("main");
+  const body = document.body;
+
+  resMenu.classList.toggle("show");
+  burger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+  main.classList.toggle("menu-open");
+}

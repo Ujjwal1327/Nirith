@@ -5,9 +5,7 @@
     z-index: 1;
     min-height: 100vh;
     /* border: 3px solid; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding-top: 130px;
 }
 
 
@@ -75,7 +73,6 @@
 }
 
 .services .container {
-    margin-top: 4rem;
     display: flex;
     align-items: stretch;
     justify-content: center;
@@ -122,58 +119,39 @@
     text-decoration: underline;
 }
 
-.services .container2 {
-    width: 100%;
-}
+@media (max-width:777px) {
+    .hero-section {
+        padding-top: 30px;
+    }
 
-.services .container2 .card {
-    width: 100%;
-    background-color: var(--light-blue-color);
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    justify-content: center;
-    text-align: center;
-    border-radius: 2rem;
-}
+    .services .container {
+        flex-direction: column;
+    }
 
-.services .container2 .card .anchor-tags {
-    display: flex;
-    align-items: center;
-    column-gap: 2rem;
-    row-gap: 1rem;
-    text-wrap: nowrap;
-    flex-wrap: wrap;
-}
+    .services .container .card {
+        width: 100%;
+    }
 
-.services .container2 .card .anchor-tags li {
-    font-size: var(--font-para3);
-    color: var(--gray-color);
-}
+    .hero-section .parent-container {
+        flex-direction: column;
+        padding-top: 50px;
+        margin-top: 70px;
+    }
 
-.services .container2 .card .anchor-tags li:hover {
-    text-decoration: underline;
-}
 
-.services .container2 .card .images {
-    margin: 2rem 0rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-    row-gap: 3rem;
+    .hero-section .parent-container>div {
+        width: 100%;
+    }
 
-}
+    .hero-section .parent-container .left {
+        align-items: center;
+        text-align: center;
+    }
 
-.services .container2 .card .images img {
-    border: 1px solid white;
-    border-radius: 1rem;
+    .services .container .card {
+        padding: 2rem;
 
-}
+        border-radius: 1rem;
+    }
 
-.services .container2 .card a {
-    margin-left: auto;
 }
