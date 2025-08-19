@@ -119,9 +119,15 @@
     text-decoration: underline;
 }
 
+.brands {
+    background-color: var(--dark-blue-color);
+    padding: 5rem 0rem;
+    margin: 3rem 0rem;
+}
 
 .brands .parent-container {
     flex-direction: column;
+    margin-bottom: 0REM;
 }
 
 .brands .parent-container .container {
@@ -130,6 +136,11 @@
     justify-content: center;
     gap: 3rem;
 
+}
+
+.brands .parent-container .container>h2 {
+    color: white;
+    border: 2px solid red;
 }
 
 .brands .parent-container .container .card {
@@ -147,7 +158,12 @@
     background-color: transparent;
     /* border: 1px solid gray; */
     box-shadow: var(--box-shadow);
+    color: white;
+    border: 1px solid white;
+}
 
+.brands .parent-container .container .card:nth-child(1) .button {
+    border: 1px solid white;
 }
 
 .brands .parent-container .container .card img {
@@ -161,6 +177,7 @@
 
 .brands .parent-container .container .card p {
     flex: 1;
+    margin-bottom: 2rem;
 }
 
 .works .parent-container {
