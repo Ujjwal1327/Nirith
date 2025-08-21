@@ -610,7 +610,7 @@ nav .burger.active span {
   min-height: 2rem;
   border-radius: 15%;
   min-width: 2rem;
-  background-color: var(--blue-color);
+  background-color: #00c49a;
 }
 
 .button {

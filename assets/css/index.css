@@ -16,7 +16,7 @@
     height: 15%;
     top: 10%;
     left: 20%;
-    background-color: rgb(147, 157, 224);
+    background-color: #00c49a;
     filter: blur(80px);
     z-index: -1;
 }
@@ -28,7 +28,7 @@
     height: 30%;
     top: 20%;
     left: 40%;
-    background-color: rgb(248, 33, 14);
+    background-color: #00c49a;
     filter: blur(100px);
     z-index: -1;
 }
@@ -119,6 +119,10 @@
     text-decoration: underline;
 }
 
+/* ************************************************************* */
+/* brands section  */
+/* ************************************************************* */
+
 .brands {
     background-color: var(--dark-blue-color);
     padding: 5rem 0rem;
@@ -180,9 +184,19 @@
     margin-bottom: 2rem;
 }
 
-.works .parent-container {
-    flex-direction: column;
+.
+/* ************************************************************* */
+/* works section  */
+/* ************************************************************* */
 
+.works {
+    display: flex;
+}
+
+.works .parent-container {
+    display: flex;
+    /* add this */
+    flex-direction: column;
 }
 
 .works .container {
@@ -201,7 +215,6 @@
     cursor: grab;
 }
 
-
 /* Wrapper with overflow hidden */
 .works .container .card .wrapper {
     width: 100%;
@@ -211,7 +224,6 @@
     margin-bottom: 1rem;
     border: 1px solid;
     position: relative;
-
 }
 
 .works .card .wrapper img {
@@ -228,6 +240,7 @@
     transition: transform 6s linear;
     /* sirf hover me apply hoga */
 }
+
 
 @media (max-width:777px) {
     .hero-section {
