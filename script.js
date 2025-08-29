@@ -61,7 +61,7 @@ function toggleResponsiveDropdown2() {
 document.getElementById("serviceForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  let service = document.querySelector('input[name="selection"]:checked')?.value || "_________________";
+  let service = document.querySelector('input[name="selection"]:checked')?.value || "________________";
   let name = document.getElementById("name").value;
   let city = document.getElementById("city").value;
   let profile = document.getElementById("profile").value;
@@ -80,7 +80,7 @@ Looking forward to your reply 🤝😊`;
 
 
   // Replace with your WhatsApp number
-  let phone = "+91 7545863949";
+  let phone = "+917545863949";
 
   let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 

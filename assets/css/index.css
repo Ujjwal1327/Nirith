@@ -242,6 +242,56 @@
     /* sirf hover me apply hoga */
 }
 
+/* ************************************************************* */
+/* stats section  */
+/* ************************************************************* */
+.stats {
+    min-height: 25vh;
+    background-color: var(--dark-blue-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats .parent-container {
+    flex-direction: column;
+    gap: 2rem;
+    margin: 5rem auto;
+    align-items: flex-start;
+    color: white;
+}
+
+.stats .parent-container>h2 {
+    margin-bottom: 4rem;
+}
+
+.stats .parent-container>.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* allow wrapping on small screens */
+    align-items: stretch;
+    /* make cards equal height */
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.stats .parent-container .container .card {
+    flex: 1;
+    /* equal space for each */
+    min-width: 200px;
+    /* prevents shrinking too small */
+    text-align: left;
+}
+
+
+.stats .parent-container .container .card h2 {
+    text-align: left;
+}
+
+.stats .parent-container .container .card p {
+    color: white;
+}
 
 @media (max-width:777px) {
     .hero-section {
