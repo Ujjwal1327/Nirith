@@ -3,11 +3,18 @@
     background-color: #fff;
     overflow: hidden;
     z-index: 1;
+
+    /* Safari iOS vh issue fix */
     min-height: 100vh;
+    min-height: -webkit-fill-available;
+
     /* border: 3px solid; */
     padding-top: 130px;
-}
 
+    /* Smooth text rendering across browsers */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 .hero-section::before {
     content: "";
@@ -17,7 +24,11 @@
     top: 10%;
     left: 20%;
     background-color: #00c49a;
+
+    /* Blur fix for Safari/WebKit */
+    -webkit-filter: blur(80px);
     filter: blur(80px);
+
     z-index: -1;
 }
 
@@ -29,22 +40,43 @@
     top: 20%;
     left: 40%;
     background-color: #00c49a;
+
+    /* Safari/WebKit prefix */
+    -webkit-filter: blur(100px);
     filter: blur(100px);
+
     z-index: -1;
 }
 
-
 .hero-section .left {
+    display: -webkit-box;
+    /* Old Safari */
+    display: -ms-flexbox;
+    /* IE 10 */
+    display: -webkit-flex;
+    /* Safari 8+ */
     display: flex;
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
+
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
     align-items: flex-start;
+
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
+
     width: 50%;
 }
 
 .hero-section .left h1 {
-    font-family: var(--orbitron);
-    font-size: var(--font-heading1);
+    font-family: var(--orbitron, sans-serif);
+    font-size: var(--font-heading1, 2.5rem);
     margin-bottom: 1rem;
 }
 
@@ -52,8 +84,6 @@
     width: 90%;
     margin-bottom: 5rem;
 }
-
-
 
 .hero-section .right {
     width: 50%;
@@ -64,6 +94,12 @@
 /* services section  */
 /* ************************************************************* */
 .services>div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
@@ -73,21 +109,48 @@
 }
 
 .services .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
     width: 100%;
+
     gap: 3rem;
+    /* Modern browsers */
+    /* fallback if gap not supported */
+    /* margin-left: -1.5rem; margin-right: -1.5rem; */
 }
 
 .services .container .card {
     padding: 3rem;
     width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
+
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
     align-items: flex-start;
-    gap: 2rem;
+
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
+
+    gap: 2rem;
+    /* Modern browsers */
     border-radius: 2rem;
     background-color: var(--light-blue-color);
 }
@@ -97,17 +160,40 @@
 }
 
 .services .container .card .anchor-tags {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
+
+    -webkit-flex: 1;
+    -ms-flex: 1;
     flex: 1;
+
     text-decoration: underline;
+
     column-gap: 2rem;
+    /* New */
     row-gap: 1rem;
-    text-wrap: nowrap;
+    /* New */
+
+    /* Fallback for Safari < 14.5 */
+    margin-left: -1rem;
+    margin-right: -1rem;
+
+    /* text-wrap is experimental → fallback */
+    white-space: nowrap;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 
 .services .container .card img {
+    -webkit-flex: 1;
+    -ms-flex: 1;
     flex: 1;
 }
 
@@ -120,6 +206,7 @@
     text-decoration: underline;
 }
 
+
 /* ************************************************************* */
 /* brands section  */
 /* ************************************************************* */
@@ -131,16 +218,39 @@
 }
 
 .brands .parent-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
-    margin-bottom: 0REM;
+
+    margin-bottom: 0rem;
+    /* lowercase rem */
 }
 
 .brands .parent-container .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    align-items: stretch;
-    justify-content: center;
-    gap: 3rem;
 
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    gap: 3rem;
+    /* modern browsers */
+
+    /* fallback for older Safari/IE */
+    /* margin-left: -1.5rem; margin-right: -1.5rem; */
 }
 
 .brands .parent-container .container>h2 {
@@ -152,16 +262,31 @@
     padding: 3rem;
     border-radius: 2rem;
     background-color: var(--light-blue-color);
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
     align-items: flex-start;
+
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
+
     gap: 1rem;
+    /* new property */
 }
 
 .brands .parent-container .container .card:nth-child(1) {
     background-color: transparent;
-    /* border: 1px solid gray; */
     box-shadow: var(--box-shadow);
     color: white;
     border: 1px solid white;
@@ -177,42 +302,63 @@
 }
 
 .brands .parent-container .container .card h3 {
+    -webkit-flex: 1;
+    -ms-flex: 1;
     flex: 1;
 }
 
 .brands .parent-container .container .card p {
+    -webkit-flex: 1;
+    -ms-flex: 1;
     flex: 1;
     margin-bottom: 2rem;
 }
 
-.
 /* ************************************************************* */
 /* works section  */
 /* ************************************************************* */
-
 .works {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
 }
 
 .works .parent-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    /* add this */
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
 .works .container {
     width: 100%;
+
+    /* Modern Grid */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     margin-top: 3rem;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .works .container .card {
     background: #fff;
     border-radius: 1.5rem;
     padding: 1.5rem;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
     transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+    cursor: -webkit-grab;
+    /* Safari */
     cursor: grab;
 }
 
@@ -231,15 +377,22 @@
     width: 100%;
     height: auto;
     display: block;
+    -webkit-transform: translateY(0);
     transform: translateY(0);
+    -webkit-transition: none;
     transition: none;
-    /* normal state me koi transition nahi */
+
+    will-change: transform;
+    /* Safari smoothness */
 }
 
 .works .card:hover .wrapper img {
+    -webkit-transform: translateY(-90%);
     transform: translateY(-90%);
+    -webkit-transition: -webkit-transform 6s linear;
+    transition: -webkit-transform 6s linear;
     transition: transform 6s linear;
-    /* sirf hover me apply hoga */
+    transition: transform 6s linear, -webkit-transform 6s linear;
 }
 
 /* ************************************************************* */
@@ -247,17 +400,44 @@
 /* ************************************************************* */
 .stats {
     min-height: 25vh;
+    min-height: -webkit-fill-available;
+    /* Safari iOS fix */
     background-color: var(--dark-blue-color);
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
+
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
 .stats .parent-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
-    gap: 2rem;
-    margin: 5rem auto;
+
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
     align-items: flex-start;
+
+    gap: 2rem;
+    /* Modern browsers */
+
+    margin: 5rem auto;
     color: white;
 }
 
@@ -267,23 +447,37 @@
 
 .stats .parent-container>.container {
     width: 100%;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    /* allow wrapping on small screens */
+
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
-    /* make cards equal height */
+
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+
     gap: 2rem;
+    /* modern flex gap */
+    /* fallback margin spacing if needed */
 }
 
 .stats .parent-container .container .card {
+    -webkit-flex: 1;
+    -ms-flex: 1;
     flex: 1;
-    /* equal space for each */
+
     min-width: 200px;
-    /* prevents shrinking too small */
     text-align: left;
 }
-
 
 .stats .parent-container .container .card h2 {
     text-align: left;
@@ -293,45 +487,152 @@
     color: white;
 }
 
-@media (max-width:777px) {
+.stats .parent-container .container2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    gap: 4rem;
+    /* modern browsers */
+    width: 100%;
+}
+
+.stats .parent-container .container2 .card1 {
+    /* Fallback for old browsers */
+    background-color: rgba(255, 255, 255, 0.33);
+    background-color: #ffffff54;
+    /* modern hex alpha */
+
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+
+    text-align: left;
+    padding-left: 1rem;
+    color: rgb(231, 231, 231);
+}
+
+.stats .parent-container .container2 .card1 h2 {
+    text-align: left;
+}
+
+.stats .parent-container .container2 .card2 {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    color: white;
+}
+
+.stats .parent-container .container2 .card2 p,
+.stats .parent-container .container2 .card2 span {
+    color: white;
+}
+
+/* Responsive Styles for max-width: 777px */
+@media screen and (max-width: 777px) {
     .hero-section {
         padding-top: 30px;
     }
 
     .services .container {
+        display: -webkit-box;
+        /* Safari/old iOS */
+        display: -ms-flexbox;
+        /* IE10 */
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
 
     .services .container .card {
         width: 100%;
+        padding: 2rem;
+        border-radius: 1rem;
     }
 
     .hero-section .parent-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         padding-top: 50px;
         margin-top: 70px;
     }
-
 
     .hero-section .parent-container>div {
         width: 100%;
     }
 
     .hero-section .parent-container .left {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         text-align: center;
     }
 
-    .services .container .card {
-        padding: 2rem;
-        border-radius: 1rem;
-    }
-
     .brands .parent-container .container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
 
     .brands .parent-container .container .card {
         padding: 2rem;
+    }
+
+    .stats .parent-container .container2 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .stats .parent-container .container2 .card1 {
+        min-height: 4rem;
     }
 }
