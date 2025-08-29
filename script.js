@@ -54,3 +54,35 @@ function toggleResponsiveDropdown2() {
   const resSubMenu = document.querySelector(".res-menu .dropdown2");
   resSubMenu.classList.toggle("showDropDown2");
 }
+
+
+
+// conatact form submission to whatsapp.
+document.getElementById("serviceForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let service = document.querySelector('input[name="selection"]:checked')?.value || "_________________";
+  let name = document.getElementById("name").value;
+  let city = document.getElementById("city").value;
+  let profile = document.getElementById("profile").value;
+  let number = document.getElementById("number").value;
+
+  let message = `👋 Hi there!  
+My name is *${name}*.  
+
+🏡 I’m from *${city}* and currently working as a *${profile}*.  
+
+💡 I’m really interested in your *${service}* services.  
+
+📩 You can contact me at: *${number}*.  
+
+Looking forward to your reply 🤝😊`;
+
+
+  // Replace with your WhatsApp number
+  let phone = "+91 7545863949";
+
+  let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+  window.open(url, "_blank");
+});

@@ -362,7 +362,7 @@
                         voluptatem nam vero impedit doloribus! Tenetur, necessitatibus? Vel, ut quam! Enim quae optio
                         repellat.</p>
                     <h2 class="heading2">I am interested in <span class="heading1">...</span></h2>
-                    <form>
+                    <form id="serviceForm">
                         <div class="options">
                             <!-- Development -->
                             <input type="radio" id="website development" name="selection" value="Website development">
@@ -402,15 +402,16 @@
                             <label class="button" for="whatsapp">Whatsapp marketing</label>
                         </div>
                         <div class="intro">
-                            <p class="p1">Hello, My name is <input type="text" placeholder="Full Name"> , </p>
-                            <p class="p1">I am from <input type="text" placeholder="City"> and a <input type="text"
-                                    placeholder="profile">. </p>
-                            <p class="p1">You can reach me at <input type="email" placeholder="Email">. </p>
+                            <p class="p1">Hello, My name is <input type="text" id="name" placeholder="Full Name"> , </p>
+                            <p class="p1">I am from <input type="text" id="city" placeholder="City"> and a <input
+                                    type="text" id="profile" placeholder="profile">. </p>
+                            <p class="p1">You can reach me at <input id="number" type="number" placeholder="Number">.
+                            </p>
                         </div>
                         <div class="send">
                             <p class="p2">By clicking on "Send now" button you agree to our <a href="/">Terms of
                                     use</a>. </p>
-                            <button class="button">Send now</button>
+                            <button type="submit" class="button">Send now</button>
                         </div>
                     </form>
                 </div>
@@ -420,27 +421,27 @@
             <div class="parent-container">
                 <div class="card">
                     <div class="icon">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-envelope"></i>
                     </div>
-                    <h2 class="heading2">Title
-                    <p class="p2">Lorem, ipsum dolor.</p>
-                    <p class="p2">Lorem, ipsum dolor.</p>
+                    <h2 class="heading2">Our email address </h2>
+                    <p class="p2">ujjwal.1327@gmail.com</p>
+                    <p class="p2">ankit65604@gmail.com</p>
+                </div>
+                <div class="card">
+                    <div class="icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h2 class="heading2">Our contact number</h2>
+                    <p class="p2">+91 7545863949</p>
+                    <p class="p2">+91 7488865604</p>
                 </div>
                 <div class="card">
                     <div class="icon">
                         <i class="fa-solid fa-location-dot"></i>
                     </div>
-                    <h2 class="heading2">Title
-                    <p class="p2">Lorem, ipsum dolor.</p>
-                    <p class="p2">Lorem, ipsum dolor.</p>
-                </div>
-                <div class="card">
-                    <div class="icon">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <h2 class="heading2">Title
-                    <p class="p2">Lorem, ipsum dolor.</p>
-                    <p class="p2">Lorem, ipsum dolor.</p>
+                    <h2 class="heading2">Our office location </h2>
+                    <p class="p2">Near Titanium Motors</p>
+                    <p class="p2">Patna city 800008</p>
                 </div>
             </div>
 
@@ -485,7 +486,6 @@
                         <p class="p2"><a href="/">Portfolio</a></p>
                         <p class="p2"><a href="/">Team</a></p>
                         <p class="p2"><a href="/">Become an Affialate</a></p>
-
                     </div>
                 </div>
                 <hr />
