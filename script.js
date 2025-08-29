@@ -80,7 +80,7 @@ Looking forward to your reply 🤝😊`;
 
 
   // Replace with your WhatsApp number
-  let phone = "+91 7545863949";
+  let phone = "+917488865604";
 
   let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
