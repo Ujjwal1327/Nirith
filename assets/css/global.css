@@ -600,6 +600,7 @@ nav .burger.active span {
   color: var(--blue-color);
   font-size: var(--font-para4);
   font-family: var(--jura);
+  text-transform: uppercase;
 }
 
 .blank {

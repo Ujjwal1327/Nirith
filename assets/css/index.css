@@ -244,8 +244,8 @@
     /* New */
 
     /* Fallback for Safari < 14.5 */
-    margin-left: -1rem;
-    margin-right: -1rem;
+    /* margin-left: -1rem;
+    margin-right: -1rem; */
 
     /* text-wrap is experimental → fallback */
     white-space: nowrap;
@@ -543,6 +543,7 @@
 
 .stats .parent-container .container .card h2 {
     text-align: left;
+    margin-bottom: 0.5rem;
 }
 
 .stats .parent-container .container .card p {
