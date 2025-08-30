@@ -185,14 +185,14 @@ summary {
 .navbar .nav-container {
   width: 100%;
   margin: auto;
-  /* padding: 1rem 0rem; */
+  padding: 1rem 0rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .navbar .logo img {
-  height: 60px;
+  height: 40px;
   width: auto;
   display: block;
 }

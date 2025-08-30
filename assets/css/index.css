@@ -74,6 +74,10 @@
     width: 50%;
 }
 
+.hero-section .parent-container {
+    gap: 6rem;
+}
+
 .hero-section .left h1 {
     font-family: var(--orbitron, sans-serif);
     font-size: var(--font-heading1, 2.5rem);
@@ -87,6 +91,65 @@
 
 .hero-section .right {
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section .image-stack {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Saare images ek dusre ke upar */
+.hero-section .image-stack img {
+    width: 100%;
+    /* parent container ke width ke hisaab se adjust */
+    max-width: 260px;
+    /* maximum limit */
+    height: auto;
+    /* aspect ratio maintain karega */
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.3s ease;
+    scale: 0.9;
+    cursor: pointer;
+}
+
+
+/* Overlap effect */
+.hero-section .image-stack img:nth-child(1) {
+    transform: rotate(-6deg) translateX(+130px);
+    z-index: 1;
+}
+
+.hero-section .image-stack img:nth-child(1):hover {
+    transform: rotate(-6deg) translateX(+130px);
+    z-index: 10;
+}
+
+
+.hero-section .image-stack img:nth-child(2) {
+    /* transform: rotate(-2deg); */
+    z-index: 3;
+}
+
+.hero-section .image-stack img:nth-child(2):hover {
+    /* transform: rotate(-6deg) translateX(+130px); */
+    z-index: 10;
+}
+
+.hero-section .image-stack img:nth-child(3) {
+    transform: rotate(6deg) translateX(-130px);
+    z-index: 2;
+}
+
+.hero-section .image-stack img:nth-child(3):hover {
+    /* transform: rotate(-6deg) translateX(+130px); */
+    z-index: 10;
 }
 
 
@@ -337,7 +400,6 @@
 
 .works .container {
     width: 100%;
-
     /* Modern Grid */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
