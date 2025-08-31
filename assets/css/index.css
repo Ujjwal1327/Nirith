@@ -363,6 +363,11 @@
     border: 1px solid white;
 }
 
+.brands .parent-container .container .card:nth-child(1) p {
+    color: white;
+
+}
+
 .brands .parent-container .container .card:nth-child(1) .button {
     border: 1px solid white;
 }
@@ -383,6 +388,7 @@
     -ms-flex: 1;
     flex: 1;
     margin-bottom: 2rem;
+    line-height: rem;
 }
 
 /* ************************************************************* */
@@ -692,6 +698,7 @@
 
     .brands .parent-container .container .card {
         padding: 2rem;
+
     }
 
     .stats .parent-container .container2 {
@@ -707,5 +714,6 @@
 
     .stats .parent-container .container2 .card1 {
         min-height: 4rem;
+
     }
 }

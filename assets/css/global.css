@@ -509,36 +509,14 @@ nav .burger.active span {
   overflow: hidden;
 }
 
-.logos .container::before,
-.logos .container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 180px;
-  /* blur area width */
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-  /* click block na ho */
-}
-
-.logos .container::before {
-  left: 0;
-  background: linear-gradient(to right, white 10%, transparent 100%);
-
-}
-
-.logos .container::after {
-  right: 0;
-  background: linear-gradient(to left, white 10%, transparent 100%);
-}
 
 .logos .all {
   display: flex;
-  gap: 3rem;
+  /* gap: 10rem; */
   align-items: center;
   flex-wrap: nowrap;
   flex-shrink: 0;
+  justify-content: space-between;
   /* shrink mat hone do */
 
   width: 100%;

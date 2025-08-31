@@ -21,16 +21,16 @@ window.addEventListener('scroll', () => {
 
 
 // infinite logo scroll
-gsap.to(".all", {
-  xPercent: -90,
-  repeat: -1,
-  duration: 15,
-  ease: "linear",
-  yoyo: true,        // wapas reverse karo smoothl
-  modifiers: {
-    xPercent: gsap.utils.wrap(-100, 0) // keep looping seamlessly
-  }
-});
+// gsap.to(".all", {
+//   xPercent: -90,
+//   repeat: -1,
+//   duration: 15,
+//   ease: "linear",
+//   yoyo: true,        // wapas reverse karo smoothl
+//   modifiers: {
+//     xPercent: gsap.utils.wrap(-100, 0) // keep looping seamlessly
+//   }
+// });
 
 function toggleMenu() {
   const resMenu = document.querySelector(".res-menu");
