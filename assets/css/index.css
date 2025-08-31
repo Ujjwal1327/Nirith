@@ -211,7 +211,14 @@
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-
+    flex: 1;
+    /* ✅ make cards share available width */
+    display: flex;
+    /* use flex layout */
+    flex-direction: column;
+    /* stack content top to bottom */
+    justify-content: space-between;
+    /* push "learn more" + img to bottom */
     gap: 2rem;
     /* Modern browsers */
     border-radius: 2rem;
@@ -220,6 +227,9 @@
 
 .services .container .card p {
     font-weight: 400;
+    /* -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1; */
 }
 
 .services .container .card .anchor-tags {
@@ -232,40 +242,40 @@
     -ms-flex-align: center;
     align-items: center;
 
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
+    /* ❌ remove flex: 1 (causes Safari spacing bug) */
 
     text-decoration: underline;
 
-    /* Use modern gap shorthand for consistency */
     gap: 1rem 2rem;
     /* row-gap | column-gap */
 
-    /* Enable wrapping */
     -ms-flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
 
-    /* Important: allow wrapping properly */
     white-space: normal;
+    /* allow wrapping */
 }
 
 
 .services .container .card img {
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
+    max-width: 100%;
+    /* don’t exceed container */
+    height: auto;
+    /* keep aspect ratio */
+    flex: 0 0 auto;
 }
 
 .services .container .card .anchor-tags li {
     font-size: var(--font-para3);
     color: var(--gray-color);
+    /* border: 2px solid red; */
 }
 
-.services .container .card .anchor-tags li:hover {
-    text-decoration: underline;
+.services .container .card .anchor-tags li a {
+    /* border: 2px solid blue; */
 }
+
 
 
 /* ************************************************************* */
