@@ -1,0 +1,196 @@
+.hero-section {
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 1;
+
+    /* Safari iOS vh issue fix */
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+
+    /* border: 3px solid; */
+    padding-top: 130px;
+
+    /* Smooth text rendering across browsers */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 15%;
+    top: 10%;
+    left: 20%;
+    background-color: #00c49a;
+
+    /* Blur fix for Safari/WebKit */
+    -webkit-filter: blur(80px);
+    filter: blur(80px);
+
+    z-index: -1;
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    top: 20%;
+    left: 40%;
+    background-color: #00c49a;
+
+    /* Safari/WebKit prefix */
+    -webkit-filter: blur(100px);
+    filter: blur(100px);
+
+    z-index: -1;
+}
+
+.hero-section .left {
+    display: -webkit-box;
+    /* Old Safari */
+    display: -ms-flexbox;
+    /* IE 10 */
+    display: -webkit-flex;
+    /* Safari 8+ */
+    display: flex;
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+
+    width: 50%;
+}
+
+.hero-section .parent-container {
+    gap: 6rem;
+}
+
+.hero-section .left h1 {
+    font-family: var(--orbitron, sans-serif);
+    font-size: var(--font-heading1, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+.hero-section .left p {
+    width: 90%;
+    margin-bottom: 5rem;
+}
+
+.hero-section .right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section .image-stack {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Saare images ek dusre ke upar */
+.hero-section .image-stack img {
+    width: 100%;
+    /* parent container ke width ke hisaab se adjust */
+    max-width: 260px;
+    /* maximum limit */
+    height: auto;
+    /* aspect ratio maintain karega */
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.3s ease;
+    scale: 0.9;
+    cursor: pointer;
+}
+
+
+/* Overlap effect */
+.hero-section .image-stack img:nth-child(1) {
+    transform: rotate(-6deg) translateX(+130px);
+    z-index: 1;
+}
+
+.hero-section .image-stack img:nth-child(1):hover {
+    transform: rotate(-6deg) translateX(+130px);
+    z-index: 10;
+}
+
+
+.hero-section .image-stack img:nth-child(2) {
+    /* transform: rotate(-2deg); */
+    z-index: 3;
+}
+
+.hero-section .image-stack img:nth-child(2):hover {
+    /* transform: rotate(-6deg) translateX(+130px); */
+    z-index: 10;
+}
+
+.hero-section .image-stack img:nth-child(3) {
+    transform: rotate(6deg) translateX(-130px);
+    z-index: 2;
+}
+
+.hero-section .image-stack img:nth-child(3):hover {
+    /* transform: rotate(-6deg) translateX(+130px); */
+    z-index: 10;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 777px) {
+    .hero-section {
+        padding-top: 30px;
+    }
+
+    .hero-section .parent-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-top: 50px;
+        margin-top: 70px;
+    }
+
+    .hero-section .parent-container>div {
+        width: 100%;
+    }
+
+    .hero-section .parent-container .left {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        text-align: center;
+    }
+}

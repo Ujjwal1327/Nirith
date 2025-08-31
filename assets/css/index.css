@@ -238,21 +238,19 @@
 
     text-decoration: underline;
 
-    column-gap: 2rem;
-    /* New */
-    row-gap: 1rem;
-    /* New */
+    /* Use modern gap shorthand for consistency */
+    gap: 1rem 2rem;
+    /* row-gap | column-gap */
 
-    /* Fallback for Safari < 14.5 */
-    /* margin-left: -1rem;
-    margin-right: -1rem; */
-
-    /* text-wrap is experimental → fallback */
-    white-space: nowrap;
+    /* Enable wrapping */
     -ms-flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
+
+    /* Important: allow wrapping properly */
+    white-space: normal;
 }
+
 
 .services .container .card img {
     -webkit-flex: 1;
@@ -629,24 +627,6 @@
         padding-top: 30px;
     }
 
-    .services .container {
-        display: -webkit-box;
-        /* Safari/old iOS */
-        display: -ms-flexbox;
-        /* IE10 */
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-    }
-
-    .services .container .card {
-        width: 100%;
-        padding: 2rem;
-        border-radius: 1rem;
-    }
-
     .hero-section .parent-container {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -669,6 +649,26 @@
         align-items: center;
         text-align: center;
     }
+
+    .services .container {
+        display: -webkit-box;
+        /* Safari/old iOS */
+        display: -ms-flexbox;
+        /* IE10 */
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .services .container .card {
+        width: 100%;
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+
+
 
     .brands .parent-container .container {
         display: -webkit-box;
