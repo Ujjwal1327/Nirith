@@ -39,6 +39,7 @@
   --white-color: #ffffff;
   --black-color: #000002;
   --gray-color: #535c6c;
+  --light-gray-color: #edf0f4;
   --dark-blue-color: #101828;
 
   /* bg-color  */
@@ -541,7 +542,7 @@ nav .burger.active span {
   /* overflow-x: hidden; */
   /* border: 1px solid; */
   gap: 3rem;
-  margin-bottom: 10rem;
+  margin-bottom: 7rem;
 }
 
 
@@ -728,6 +729,13 @@ nav .burger.active span {
   width: 100vw;
 }
 
+@media (max-width: 777px) {
+  .parent-container {
+
+    margin-bottom: 5rem;
+  }
+
+}
 
 /* ************************************************************* */
 /* Footer section */
