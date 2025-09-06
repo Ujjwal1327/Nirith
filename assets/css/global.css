@@ -1,24 +1,30 @@
 @font-face {
-  font-family: "Orbitron";
+  font-family: Orbitron;
   src: url("/assets/font/Orbitron-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
+  font-display: swap;
+  /* 👈 Added */
 }
 
 @font-face {
-  font-family: "Jura";
+  font-family: Jura;
   src: url("/assets/font/Jura-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
+  font-display: swap;
+  /* 👈 Added */
 }
 
-/* Primary font */
 @font-face {
-  font-family: "Primary";
+  font-family: Primary;
   src: url("/assets/font/primary.woff2") format("woff2");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
+  /* 👈 Added */
 }
+
 
 :root {
   /* font-size  */
@@ -46,7 +52,7 @@
   --light-blue-color: #f0f1ff;
   --blue-color: #4f39f6;
   --blue-color2: #402fbe;
-
+  --green-color: #00c49a;
   /* box shadow  */
   --box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 

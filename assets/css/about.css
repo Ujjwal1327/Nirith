@@ -3,15 +3,9 @@
     background-color: #fff;
     overflow: hidden;
     z-index: 1;
-
-    /* Safari iOS vh issue fix */
     min-height: 100vh;
     min-height: -webkit-fill-available;
-
-    /* border: 3px solid; */
     padding-top: 130px;
-
-    /* Smooth text rendering across browsers */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -157,10 +151,96 @@
 
 
 
+/* *********************************** */
+/* values  */
+/* *********************************** */
+
+.values>.parent-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.values .parent-container>p {
+    width: 80%;
+    text-align: center;
+}
+
+.values .parent-container>.container {
+    width: 90%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 3rem;
+    gap: 1rem;
+}
+
+.values .parent-container>.container .card {
+    width: 50%;
+    padding: 3rem;
+    min-height: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 1rem;
+    /* pushes content to bottom */
+}
 
 
+.values .parent-container>.container .card h3 {
+    margin-bottom: 2rem;
+}
+
+.values .parent-container>.container .card p {
+    color: white;
+}
+
+.values .parent-container>.container .card1 {
+    color: white;
+    background-color: var(--green-color);
+}
+
+.values .parent-container>.container .card2 {
+    color: var(--dark-blue-color);
+    background-color: var(--light-blue-color);
+}
+
+.values .parent-container>.container .card2 p {
+    color: var(--dark-blue-color);
+}
 
 
+/* *********************************** */
+/* bio  */
+/* *********************************** */
+.bio .parent-container {
+    align-items: stretch;
+    gap: 5rem;
+}
+
+.bio .parent-container .card:nth-child(1) {
+    gap: 0.4rem;
+}
+
+.bio .parent-container .card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex: 1;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.bio .parent-container .card>img {
+    max-width: 20rem;
+    height: auto;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.bio .parent-container .card>img:last-child {
+    max-width: 15rem;
+}
 
 
 

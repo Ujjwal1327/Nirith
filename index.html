@@ -2,40 +2,48 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P06RV1PLQ5"></script>
+
+    <!-- Google Analytics (Lazy Loaded) -->
+    <!-- Lazy-load GA only once -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-P06RV1PLQ5');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.addEventListener("load", () => {
+            const s = document.createElement("script");
+            s.src = "https://www.googletagmanager.com/gtag/js?id=G-P06RV1PLQ5";
+            s.async = true;
+            document.head.appendChild(s);
+            gtag('js', new Date());
+            gtag('config', 'G-P06RV1PLQ5');
+        });
     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ✅ SEO Meta Tags -->
+    <!-- Preconnects you actually use -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+
+    <!-- 🔥 PRELOAD the LCP image -->
+    <link rel="preload" as="image" href="assets/images/hero1.webp" fetchpriority="high"
+        imagesrcset="assets/images/hero1.webp 1200w" imagesizes="(max-width:900px) 90vw, 600px">
+
+    <!-- (Optional) Preload fonts you own (best if WOFF2) -->
+    <!-- update type/hrefs to match your files -->
+    <link rel="preload" as="font" type="font/woff2" href="/assets/font/primary.woff2" crossorigin>
+    <!-- if Orbitron & Jura are TTF, consider converting to WOFF2; if not possible use type="font/ttf" -->
+    <!-- <link rel="preload" as="font" type="font/ttf" href="/assets/font/Orbitron-VariableFont_wght.ttf" crossorigin> -->
+
     <title>Nirith Elevates | Best Digital Marketing Company in Patna</title>
-    <meta name="description" content="Nirith Elevates is the best digital marketing company in Patna offering SEO, social media, and branding solutions to grow your business online.">
-    <meta name="keywords" content="digital marketing company in Patna, SEO Patna, social media marketing Patna, branding agency Patna, Nirith Elevates">
-    <meta name="author" content="Nirith Elevates">
+    <meta name="description"
+        content="Nirith Elevates is the best digital marketing company in Patna offering SEO, social media, and branding solutions to grow your business online.">
 
-    <!-- ✅ Open Graph (For Social Sharing) -->
-    <meta property="og:title" content="Nirith Elevates | Best Digital Marketing Company in Patna">
-    <meta property="og:description" content="Grow your business online with Nirith Elevates - Patna’s top digital marketing company offering SEO, SMM, and branding.">
-    <meta property="og:image" content="https://nirith.com/assets/img/logo.png">
-    <meta property="og:url" content="https://nirith.com/">
-    <meta property="og:type" content="website">
-
-    <!-- ✅ Favicon -->
     <link rel="icon" href="assets/img/favicon.png" type="image/png">
-
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/index.css">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
 
 <body>
@@ -44,7 +52,7 @@
         <div class="parent-container">
             <nav class="nav-container">
                 <a class="logo" href="/">
-                    <img src="assets/images/logo.png" alt="Company Logo" />
+                    <img src="assets/images/logo.webp" alt="Company Logo" />
                 </a>
                 <ul class="menu">
                     <li><a href="about.html">About</a></li>
@@ -355,36 +363,47 @@
             <div class="parent-container">
                 <div class="left">
                     <h1>Let's put your business to top</h1>
-                    <p class="p1">Website Building, Design, Digital Marketing These Services Help You reach a large
-                        audience,
-                        Optimizing Your Business For MaximumPerformce</p>
+                    <p class="p1">Website Building, Design, Digital Marketing …</p>
                     <a href="contact.html" class="button">Free Analysis Of Your Business</a>
                 </div>
 
                 <div class="right">
                     <div class="image-stack">
+                        <!-- ⭐ LCP image -->
+                        <img src="assets/images/hero1.webp"
+                            alt="Nirith digital marketing agency in Patna helping businesses grow online" width="600"
+                            height="400" fetchpriority="high" decoding="async">
 
-                        <img src="assets/images/hero1.png" alt="">
-                        <img src="assets/images/hero2.png" alt="">
-                        <img src="assets/images/hero3.png" alt="">
+                        <!-- If these two are NOT visible on first paint, lazy them -->
+                        <img src="assets/images/hero2.webp" alt="best website development and SEO services in Patna"
+                            width="600" height="400" loading="lazy" decoding="async" fetchpriority="low">
+
+                        <img src="assets/images/hero3.webp"
+                            alt="Social media marketing and digital advertising by Nirith in Patna" width="600"
+                            height="400" loading="lazy" decoding="async" fetchpriority="low">
                     </div>
-
                 </div>
             </div>
         </section>
+
         <section class="logos">
             <div class="parent-container">
                 <div class="blue-dot"></div>
                 <h2 class="heading2">Trusted by leading brands worldwide</h2>
                 <div class="container">
                     <div class="all">
-                        <img src="assets/images/company-logo2.png" alt="">
-                        <img src="assets/images/company-logo3.webp" alt="">
-                        <img src="assets/images/company-logo4.svg" alt="">
-                        <img src="assets/images/company-logo5.png" alt="">
-                        <img src="assets/images/company-logo6.png" alt="">
-
+                        <img src="assets/images/company-logo2.webp" alt="…" width="160" height="40" loading="lazy"
+                            decoding="async" fetchpriority="low">
+                        <img src="assets/images/company-logo3.webp" alt="…" width="160" height="40" loading="lazy"
+                            decoding="async" fetchpriority="low">
+                        <img src="assets/images/company-logo4.svg" alt="…" width="160" height="40" loading="lazy"
+                            decoding="async" fetchpriority="low">
+                        <img src="assets/images/company-logo5.webp" alt="…" width="160" height="40" loading="lazy"
+                            decoding="async" fetchpriority="low">
+                        <img src="assets/images/company-logo6.webp" alt="…" width="160" height="40" loading="lazy"
+                            decoding="async" fetchpriority="low">
                     </div>
+
 
 
                 </div>
@@ -415,11 +434,13 @@
                         <a class="button">
                             learn more
                         </a>
-                        <img src="assets/images/des-service.png" alt="">
+                        <img src="assets/images/des-service.webp"
+                            alt="Design services by Nirith - leading digital marketing agency in Patna" width="640"
+                            height="420" loading="lazy" decoding="async" fetchpriority="low">
                     </div>
                     <div class="card">
                         <h4 class="heading4">
-                            Web & Software  
+                            Web & Software
                         </h4>
                         <h3 class="heading3">Development</h3>
                         <p class="p2">
@@ -439,7 +460,9 @@
                         <a class="button">
                             learn more
                         </a>
-                        <img src="assets/images/dev-service.png" alt="">
+                        <img src="assets/images/dev-service.webp"
+                            alt="Website and software development services in Patna - Nirith digital agency" width="640"
+                            height="420" loading="lazy" decoding="async" fetchpriority="low">
                     </div>
                 </div>
                 <div class="container">
@@ -465,7 +488,9 @@
                             <li><a href="/">Email marketing</a></li>
                         </ul>
                         <a href="/" class="button">Learn More</a>
-                        <img src="assets/images/marketing-service.png" alt="">
+                        <img src="assets/images/marketing-service.webp"
+                            alt="Advertisement and SEO services by Nirith digital marketing agency in Patna" width="640"
+                            height="420" loading="lazy" decoding="async" fetchpriority="low">
                     </div>
                     <div class="card">
                         <h4 class="heading4">
@@ -487,7 +512,9 @@
 
                         </ul>
                         <a href="/" class="button">Learn More</a>
-                        <img src="assets/images/chatbot-service.png" alt="">
+                        <img src="assets/images/chatbot-service.webp"
+                            alt="AI chatbot optimization services for businesses by Nirith in Patna" width="640"
+                            height="420" loading="lazy" decoding="async" fetchpriority="low">
                     </div>
                 </div>
             </div>
@@ -498,7 +525,9 @@
                 <h2 style="color: white;" class="heading2">This is how “NIRITH” has helped business grow</h2>
                 <div class="container">
                     <div class="card">
-                        <img src="assets/images/sh-logo.svg" alt="">
+                        <img src="assets/images/sh-logo.svg"
+                            alt="Brands that trust Nirith digital marketing agency in Patna" width="160" height="40"
+                            loading="lazy" decoding="async" fetchpriority="low">
                         <h3 class="heading3">How we helped “Start Up HideOut” Stand Out in the web develelopement
                             industry?</h3>
                         <p class="p2">Start Up HideOut, a Patna-based web development company, was invisible in their
@@ -508,7 +537,9 @@
                         <a href="/" class="button">Learn More</a>
                     </div>
                     <div class="card">
-                        <img src="assets/images/company-logo6.png" alt="">
+                        <img src="assets/images/company-logo6.webp"
+                            alt="Brands that trust Nirith digital marketing agency in Patna" width="160" height="40"
+                            loading="lazy" decoding="async" fetchpriority="low">
                         <h3 class="heading3">How did we help NextGen establish its internet presence?</h3>
                         <p class="p2">This company is from Patna, Main business car transport. for them, we designed
                             their logo, ui, brochure, banners and all. their website construction and content creation.
@@ -526,23 +557,37 @@
                 <div class="container">
                     <div class="card">
                         <div class="wrapper"><img
-                                src="https://i.pinimg.com/736x/9b/15/6a/9b156a9387199d28f986c186ef8e8bce.jpg" alt="">
+                                src="https://i.pinimg.com/736x/9b/15/6a/9b156a9387199d28f986c186ef8e8bce.jpg"
+                                alt="Design projects by Nirith digital marketing agency in Patna" width="736"
+                                height="736" loading="lazy" decoding="async" fetchpriority="low"
+                                referrerpolicy="no-referrer">
                         </div>
                         <h3 class="heading3">Design</h3>
                         <p class="p2">User focused design for apps, websites, logo and Creatives</p>
                     </div>
                     <div class="card">
-                        <div class="wrapper"><img src="assets/images/longImg.png" alt=""></div>
+                        <div class="wrapper">
+                            <img src="assets/images/longImg.png" alt="Website development portfolio by Nirith in Patna"
+                                width="900" height="600" loading="lazy" decoding="async" fetchpriority="low">
+                        </div>
                         <h3 class="heading3">Development</h3>
                         <p class="p2">Build Powerful, scalable digital solutions for growth.</p>
                     </div>
                     <div class="card">
-                        <div class="wrapper"><img src="assets/images/longImg-adv.jpg" alt=""></div>
+                        <div class="wrapper">
+                            <img src="assets/images/longImg-adv.webp"
+                                alt="Digital advertisement campaigns managed by Nirith agency" width="900" height="600"
+                                loading="lazy" decoding="async" fetchpriority="low">
+                        </div>
                         <h3 class="heading3">Advertisement</h3>
                         <p class="p2"> Smart, targeted marketing strategies that drives results.</p>
                     </div>
                     <div class="card">
-                        <div class="wrapper"><img src="assets/images/longImg-chatbot.jpg" alt=""></div>
+                        <div class="wrapper">
+                            <img src="assets/images/longImg-chatbot.webp"
+                                alt="Content creation services by Nirith digital agency in Patna" width="900"
+                                height="600" loading="lazy" decoding="async" fetchpriority="low">
+                        </div>
                         <h3 class="heading3">Content Creation</h3>
                         <p class="p2">Producing compelling , high quality content that connects with people.</p>
                     </div>
@@ -594,7 +639,9 @@
             <div class="parent-container">
                 <div class="container">
                     <div class="card">
-                        <img src="assets/images/logo.svg" alt="">
+                        <img src="assets/images/logo.webp" alt="Nirith logo" width="160" height="40" loading="lazy"
+                            decoding="async" fetchpriority="low">
+
                         <a href="/"></a>
                         <div>
                             <h3 class="heading3">Patna</h3>
@@ -662,11 +709,12 @@
         </footer>
     </main>
     <!-- GSAP Core -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <!-- GSAP ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
-    <script src="script.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
+    <script defer src="script.js"></script>
 </body>
+
 
 </html>
